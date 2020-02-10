@@ -1,0 +1,12 @@
+- hosts: ansislave
+  tasks: 
+  - name: Update and upgrade apt packages
+    become: true
+    apt:
+      update_cache: yes
+
+  - name: Install apache httpd  (state=present is optional)
+    become: true
+    apt:
+      name: apache2
+      state: present
