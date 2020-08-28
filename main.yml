@@ -10,3 +10,20 @@
     apt:
       name: apache2
       state: present
+
+  - name: reload service httpd, in all cases
+    systemd:
+      name: apache2
+      state: stopped
+  - name: reload service httpd, in all cases
+    systemd:
+      name: apache2
+      state: started
+
+- hosts: ansimaster
+  tasks:
+  - name: Install the package "Lynx"
+    become: true
+    apt:
+      name: lynx
+
